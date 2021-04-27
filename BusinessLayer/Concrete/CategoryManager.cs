@@ -21,15 +21,16 @@ namespace BusinessLayer.Concrete
 
         public void CategoryAddBL(Category p)
         {
-            if(p.CategoryName=="" || p.CategoryName.Length<=3 || p.CategoryDescription=="" || p.CategoryName.Length>=51 )
-            {
-                //Hata mesajı eklenecek
-            }
+            repo.Insert(p);
+            //if(p.CategoryName=="" || p.CategoryName.Length<=3 || p.CategoryDescription=="" || p.CategoryName.Length>=51 )
+            //{
+            //    //Hata mesajı eklenecek
+            //}
 
-            else
-            {
-                repo.Insert(p);
-            }
+            //else
+            //{
+            //    repo.Insert(p);
+            //}
         }
     }
 }
