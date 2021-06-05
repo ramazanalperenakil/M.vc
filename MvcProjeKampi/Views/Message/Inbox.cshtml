@@ -1,13 +1,9 @@
 ﻿@using EntityLayer.Concrete
-@model List<Contact>
-
+@model List<Mesaj>
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Inbox";
     Layout = "~/Views/Shared/_Admin.cshtml";
 }
-
-
-
 <!DOCTYPE html>
 <html>
 
@@ -19,7 +15,7 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h1>Inbox</h1>
+                    <h1>Gelen Mesaj</h1>
                 </div>
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">
@@ -33,7 +29,7 @@
     <!-- Main content -->
     <section class="content">
         <div class="row">
-           @Html.Action("MessageListMenu","Contact")
+            @Html.Action("MessageListMenu", "Contact")
             <!-- /.col -->
             <div class="col-md-9">
                 <div class="card card-primary card-outline">
@@ -88,9 +84,9 @@
                                                 </div>
                                             </td>
                                             <td class="mailbox-star"><a href="#"><i class="fas fa-star text-warning"></i></a></td>
-                                            <td class="mailbox-name"><a href="/Contact/GetContactDetaList/@x.ContactID">@x.UserName</a></td>
+                                            <td class="mailbox-name"><a href="/Contact/GetContactDetaList/@x.MessageID">@x.SenderMail</a></td>
                                             <td class="mailbox-subject">
-                                                <b>@x.Subject</b> @x.Message.Substring(0,5)
+                                                <b>@x.Subjet</b> @x.MessageContent.Substring(0, 5)
                                             </td>
                                             <td class="mailbox-attachment"></td>
                                             <td class="mailbox-date">5 mins ago</td>
@@ -138,3 +134,4 @@
 
 </body>
 </html>
+
