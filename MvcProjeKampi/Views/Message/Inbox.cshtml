@@ -84,12 +84,12 @@
                                                 </div>
                                             </td>
                                             <td class="mailbox-star"><a href="#"><i class="fas fa-star text-warning"></i></a></td>
-                                            <td class="mailbox-name"><a href="/Contact/GetContactDetaList/@x.MessageID">@x.SenderMail</a></td>
+                                            <td class="mailbox-name"><a href="/Message/GetInBoxMessageDetaList/@x.MessageID">@x.SenderMail</a></td>
                                             <td class="mailbox-subject">
                                                 <b>@x.Subjet</b> @x.MessageContent.Substring(0, 5)
                                             </td>
                                             <td class="mailbox-attachment"></td>
-                                            <td class="mailbox-date">5 mins ago</td>
+                                            <td class="mailbox-date">@x.MessageDate</td>
                                         </tr>
                                     }
 

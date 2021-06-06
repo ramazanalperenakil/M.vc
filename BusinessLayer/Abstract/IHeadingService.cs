@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace BusinessLayer.Abstract
 {
-    public interface IHeadingService
+    public interface IImageFileService
     {
         List<Heading> GetList();
         void HeadingAdd(Heading heading);

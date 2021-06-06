@@ -1,9 +1,10 @@
-﻿@model EntityLayer.Concrete.Contact
+﻿@model EntityLayer.Concrete.Mesaj
 
 @{
-    ViewBag.Title = "GetContactDetaList";
+    ViewBag.Title = "GetInBoxMessageDetaList";
     Layout = "~/Views/Shared/_Admin.cshtml";
 }
+
 
 
 <section class="content">
@@ -25,12 +26,11 @@
 
                     <div class="card-body p-0">
                         <div class="mailbox-read-info">
-                            <h5>@Html.DisplayFor(x => x.Subject)</h5>
+                            <h5>@Html.DisplayFor(x => x.Subjet)</h5>
                             <h6>
-                                Mail: @Html.DisplayFor(x => x.UserMail)
+                                Mail: @Html.DisplayFor(x => x.SenderMail)
                                 <span class="mailbox-read-time float-right">
-                                    @Html.DisplayFor(x => x.ContactDate)
-                                </span>
+                                @Html.DisplayFor(x => x.MessageDate)</span>
                             </h6>
                         </div>
                         <!-- /.mailbox-read-info -->
@@ -40,7 +40,7 @@
 
 
                             <p>
-                                @Html.DisplayFor(x => x.Message)
+                                @Html.DisplayFor(x => x.MessageContent)
                             </p>
 
 
@@ -69,3 +69,4 @@
         <!-- /.row -->
     </div>
 </section>
+

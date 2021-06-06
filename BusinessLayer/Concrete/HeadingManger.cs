@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace BusinessLayer.Concrete
 {
-    public class HeadingManger : IHeadingService
+    public class HeadingManger : IImageFileService
     {
         IHeadingDal _headingDal;
 
