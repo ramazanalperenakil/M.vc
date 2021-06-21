@@ -12,16 +12,13 @@ namespace BusinessLayer.ValidationRules
     {
         public MessageValidator()
         {
-
-            RuleFor(x => x.ReceiverMail).NotEmpty().WithMessage("Mail Adresini Boş Geçemezsiniz");
-
-            RuleFor(x => x.Subjet).NotEmpty().WithMessage("Konu Alanını Boş Geçemezsiniz");
+            RuleFor(x => x.Subjet).NotEmpty().WithMessage("Konuyu Boş Geçemezsiniz");
+            RuleFor(x => x.ReceiverMail).NotEmpty().WithMessage("Alıcı Adresini boş Geçemezsiniz");
             RuleFor(x => x.MessageContent).NotEmpty().WithMessage("Mesaj Alanını Boş Geçemezsiniz");
+            RuleFor(x => x.Subjet).MinimumLength(3).WithMessage("Lütfen En Az 3 Karakter  Giriniz");
+            RuleFor(x => x.ReceiverMail).EmailAddress().WithMessage("Geçerli Bir Eposta Adresi Giriniz.").When(x => !string.IsNullOrEmpty(x.ReceiverMail));
+            RuleFor(x => x.Subjet).MaximumLength(20).WithMessage("Lütfen 100 Karakterden Fazla Değer Girişi Yapmayın");
 
-
-            RuleFor(x => x.Subjet).MinimumLength(3).WithMessage("En Az 3 Karakter   ");
-            RuleFor(x => x.ReceiverMail).MinimumLength(3).WithMessage("En Az 3 Karakter   ");
-            RuleFor(x => x.MessageContent).MaximumLength(100).WithMessage("En Fazla 100 Karakter   ");
         }
     }
 }

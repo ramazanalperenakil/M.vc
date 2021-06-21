@@ -32,7 +32,13 @@ namespace BusinessLayer.Concrete
 
         public List<Mesaj> GetListSendbox()
         {
-            return _messageDal.List(x => x.SenderMail == "admin@bilgisayartech.tk");
+            return _messageDal.List(x => x.SenderMail == "admin@bilgisayartech.tk" && x.MessageDraftsStatus == false);
+        }
+
+        public List<Mesaj> GetListDraftbox()
+        {
+            return _messageDal.List(x => x.SenderMail == "admin@bilgisayartech.tk" && x.MessageDraftsStatus == true);
+
         }
 
         public void MesajAdd(Mesaj mesaj)

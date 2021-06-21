@@ -11,7 +11,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-
+    <title>AdminLTE 3 | Compose Message</title>
     <!-- Tell the browser to be responsive to screen width -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- Font Awesome -->
@@ -31,14 +31,9 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h1>Compose</h1>
+                    <h1>Yeni Mesaj Sayfası</h1>
                 </div>
-                <div class="col-sm-6">
-                    <ol class="breadcrumb float-sm-right">
-                        <li class="breadcrumb-item"><a href="#">Home</a></li>
-                        <li class="breadcrumb-item active">Compose</li>
-                    </ol>
-                </div>
+
             </div>
         </div><!-- /.container-fluid -->
     </section>
@@ -58,57 +53,56 @@
                             <!-- /.card-header -->
                             <div class="card-body">
                                 <div class="form-group">
-                                    @Html.Label("Alıcı :")
+                                    @Html.Label("Alıcı Adı")
                                     @Html.TextBoxFor(x => x.ReceiverMail, new { @class = "form-control" })
                                     @Html.ValidationMessageFor(x => x.ReceiverMail)
                                 </div>
                                 <div class="form-group">
-                                    @Html.Label("Konu :")
+                                    @Html.Label("Konu")
                                     @Html.TextBoxFor(x => x.Subjet, new { @class = "form-control" })
                                     @Html.ValidationMessageFor(x => x.Subjet)
                                 </div>
                                 <div class="form-group">
-                                    @Html.Label("Alıcı")
+                                    @*<textarea id="compose-textarea" class="form-control" style="height: 300px"></textarea>*@
+
+                                    @Html.Label("Mesajınız")
                                     @Html.TextAreaFor(x => x.MessageContent, new { @class = "form-control", @id = "compose-textarea" })
                                     @Html.ValidationMessageFor(x => x.MessageContent)
-
-                                    @*<textarea id="compose-textarea" class="form-control" style="height: 300px">
-
-        </textarea>*@
                                 </div>
                                 <div class="form-group">
                                     <div class="btn btn-default btn-file">
                                         <i class="fas fa-paperclip"></i> Dosya Ekle
                                         <input type="file" name="attachment">
                                     </div>
-                                    <p class="help-block">En Fazla Boyut. 32MB</p>
+                                    <p class="help-block">Max. 32MB</p>
                                 </div>
                             </div>
                             <!-- /.card-body -->
                             <div class="card-footer">
                                 <div class="float-right">
-                                    <button type="button" class="btn btn-default"><i class="fas fa-pencil-alt"></i> Taslaklara Kaydet</button>
-                                    <button type="submit" class="btn btn-primary"><i class="far fa-envelope"></i> Gönder</button>
+                                    <button type="submit" name="btn" value="Draft" class="btn btn-default"><i class="fas fa-pencil-alt"></i> Taslaklara Kaydet</button>
+                                    <button type="submit" name="btn" value="Send" class="btn btn-primary"><i class="far fa-envelope"></i> Gönder</button>
                                 </div>
                                 <button type="reset" class="btn btn-default"><i class="fas fa-times"></i> İptal Et</button>
                             </div>
                             <!-- /.card-footer -->
                         </div>
                     }
-                        <!-- /.card -->
-                    </div>
+                    <!-- /.card -->
+                </div>
                 <!-- /.col -->
             </div>
             <!-- /.row -->
         </div><!-- /.container-fluid -->
     </section>
+
     <!-- /.content -->
     <!-- /.content-wrapper -->
     <!-- Control Sidebar -->
     <!-- /.control-sidebar -->
     <!-- ./wrapper -->
     <!-- jQuery -->
-    <script src="~/AdminLTE-3.0.4/plugins/jquery/jquery.min.js"></script>
+    @*<script src="~/AdminLTE-3.0.4/plugins/jquery/jquery.min.js"></script>*@
     <!-- Bootstrap 4 -->
     <script src="~/AdminLTE-3.0.4/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
     <!-- AdminLTE App -->
@@ -124,4 +118,3 @@
             $('#compose-textarea').summernote()
         })</script>
 </body>
-</html>

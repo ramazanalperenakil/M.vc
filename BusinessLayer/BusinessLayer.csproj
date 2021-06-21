@@ -55,19 +55,25 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Abstract\IAboutService.cs" />
+    <Compile Include="Abstract\IAdminService.cs" />
+    <Compile Include="Abstract\ICapabilityService.cs" />
     <Compile Include="Abstract\ICategoryService.cs" />
     <Compile Include="Abstract\IContactService.cs" />
     <Compile Include="Abstract\IContentService.cs" />
     <Compile Include="Abstract\IHeadingService.cs" />
     <Compile Include="Abstract\IImageFileSErvice.cs" />
+    <Compile Include="Abstract\ILoginService.cs" />
     <Compile Include="Abstract\IMessageService.cs" />
     <Compile Include="Abstract\IWriterSeervice.cs" />
     <Compile Include="Concrete\AboutManger.cs" />
+    <Compile Include="Concrete\AdminManager.cs" />
+    <Compile Include="Concrete\CapabilityManager.cs" />
     <Compile Include="Concrete\CategoryManager.cs" />
     <Compile Include="Concrete\ContactManager.cs" />
     <Compile Include="Concrete\ContentManager.cs" />
     <Compile Include="Concrete\HeadingManger.cs" />
     <Compile Include="Concrete\ImageFileManager.cs" />
+    <Compile Include="Concrete\LoginManager.cs" />
     <Compile Include="Concrete\MessageManager.cs" />
     <Compile Include="Concrete\WriterManeger.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

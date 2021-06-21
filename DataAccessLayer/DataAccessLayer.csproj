@@ -52,6 +52,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Abstract\IAboutDal.cs" />
+    <Compile Include="Abstract\IAdminDal.cs" />
+    <Compile Include="Abstract\ICapabilityDal.cs" />
     <Compile Include="Abstract\ICategoryDal.cs" />
     <Compile Include="Abstract\IContactDal.cs" />
     <Compile Include="Abstract\IContentDal.cs" />
@@ -63,7 +65,10 @@
     <Compile Include="Concrete\Context.cs" />
     <Compile Include="Concrete\Repositories\CategoryRepository.cs" />
     <Compile Include="Concrete\Repositories\GenericRepository.cs" />
+    <Compile Include="Concrete\Repositories\WriterRepository.cs" />
     <Compile Include="EntityFramework\EfAboutDal.cs" />
+    <Compile Include="EntityFramework\EfAdminDal.cs" />
+    <Compile Include="EntityFramework\EfCapabilityDal.cs" />
     <Compile Include="EntityFramework\EfCategoryDal.cs" />
     <Compile Include="EntityFramework\EfContactDal.cs" />
     <Compile Include="EntityFramework\EfContentDal.cs" />
@@ -111,6 +116,22 @@
     <Compile Include="Migrations\202106060833433_mig_addimage_file.designer.cs">
       <DependentUpon>202106060833433_mig_addimage_file.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202106210647341_mig_admin_table.cs" />
+    <Compile Include="Migrations\202106210647341_mig_admin_table.designer.cs">
+      <DependentUpon>202106210647341_mig_admin_table.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202106210847470_odev3.cs" />
+    <Compile Include="Migrations\202106210847470_odev3.designer.cs">
+      <DependentUpon>202106210847470_odev3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202106210927464_odev3-1.cs" />
+    <Compile Include="Migrations\202106210927464_odev3-1.designer.cs">
+      <DependentUpon>202106210927464_odev3-1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202106211048101_odev3-2.cs" />
+    <Compile Include="Migrations\202106211048101_odev3-2.designer.cs">
+      <DependentUpon>202106211048101_odev3-2.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -154,6 +175,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202106060833433_mig_addimage_file.resx">
       <DependentUpon>202106060833433_mig_addimage_file.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202106210647341_mig_admin_table.resx">
+      <DependentUpon>202106210647341_mig_admin_table.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202106210847470_odev3.resx">
+      <DependentUpon>202106210847470_odev3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202106210927464_odev3-1.resx">
+      <DependentUpon>202106210927464_odev3-1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202106211048101_odev3-2.resx">
+      <DependentUpon>202106211048101_odev3-2.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup />

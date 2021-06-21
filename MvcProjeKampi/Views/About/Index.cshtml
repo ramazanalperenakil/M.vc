@@ -1,4 +1,4 @@
-﻿@using EntityLayer.Concrete
+﻿﻿@using EntityLayer.Concrete
 @model List<About>
 @{
     ViewBag.Title = "Index";
@@ -11,8 +11,8 @@
     <tr>
         <th>ID</th>
         <th>Hakkımda Başlığı</th>
-        <th> Aktif Yap</th>
-        <th> Pasif Yap</th>
+        <th> Durum</th>
+        
     </tr>
 
     @foreach (var item in Model)
@@ -20,10 +20,29 @@
         <tr>
             <td>@item.AboutID</td>
             <td>Başlık</td>
-            <td><a href="#" class="btn btn-warning">Aktif Yap</a></td>
-            <td><a href="#" class="btn btn-danger">Pasif Yap</a></td>
+            @if (item.AboutStatus == true)
+            {
+                <td>
+                    <a class="btn btn-danger btn-sm" href="/About/AktifPasif/@item.AboutID">
+                        <i class="fas fa-trash">
+                        </i>
+                        Pasif Yap
+                    </a>
+                </td>
+            }
+            else
+            {
+                <td>
+                    <a class="btn btn-success btn-sm" href="/About/AktifPasif/@item.AboutID">
+                        <i class="fas fa-trash">
+                        </i>
+                        Aktif Yap
+                    </a>
+                </td>
+            }
+
         </tr>
     }
 </table>
 <br />
-@Html.Action("AboutPatial","About")
+@Html.Action("AboutPatial", "About")

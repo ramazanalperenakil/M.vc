@@ -35,6 +35,26 @@ namespace MvcProjeKampi.Controllers
         public PartialViewResult AboutPatial()
         {
             return PartialView();
+
+
         }
+
+        public ActionResult AktifPasif(int id)
+        {
+            var AboutValue = abm.GetByID(id);
+            if (AboutValue.AboutStatus == true)
+            {
+                AboutValue.AboutStatus = false;
+            }
+            else
+            {
+                AboutValue.AboutStatus = true;
+            }
+
+            abm.AboutUpdate(AboutValue);
+            return RedirectToAction("Index");
+
+        }
+        
     }
 }

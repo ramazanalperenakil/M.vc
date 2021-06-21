@@ -23,5 +23,8 @@ namespace EntityLayer.Concrete
         [AllowHtml]
         public string MessageContent { get; set; }
         public DateTime MessageDate { get; set; }
+
+        public bool MessageReadStatus { get; set; }
+        public bool MessageDraftsStatus { get; set; }
     }
 }
