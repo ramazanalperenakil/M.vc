@@ -27,17 +27,17 @@ namespace BusinessLayer.Concrete
 
         public List<Mesaj> GetListInbox()
         {
-            return _messageDal.List(x => x.ReceiverMail == "admin@bilgisayartech.tk");
+            return _messageDal.List(x => x.ReceiverMail == "gizem@gizem.com");
         }
 
         public List<Mesaj> GetListSendbox()
         {
-            return _messageDal.List(x => x.SenderMail == "admin@bilgisayartech.tk" && x.MessageDraftsStatus == false);
+            return _messageDal.List(x => x.SenderMail == "gizem@gizem.com" && x.MessageDraftsStatus == false);
         }
 
         public List<Mesaj> GetListDraftbox()
         {
-            return _messageDal.List(x => x.SenderMail == "admin@bilgisayartech.tk" && x.MessageDraftsStatus == true);
+            return _messageDal.List(x => x.SenderMail == "gizem@gizem.com" && x.MessageDraftsStatus == true);
 
         }
 
