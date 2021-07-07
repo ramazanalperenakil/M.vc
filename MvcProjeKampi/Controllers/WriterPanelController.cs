@@ -13,7 +13,7 @@ namespace MvcProjeKampi.Controllers
     public class WriterPanelController : Controller
     {
         Context c = new Context();
-         
+
         // GET: WriterPanel
         HeadingManger hm = new HeadingManger(new EfHeadingDal());
         CategoryManager cm = new CategoryManager(new EfCategoryDal());
@@ -26,19 +26,19 @@ namespace MvcProjeKampi.Controllers
             return View();
         }
 
-        public ActionResult MyHeading( string p )
+        public ActionResult MyHeading(string p)
         {
-           
+
             p = (string)Session["WriterMail"];
             var writeridinfo = c.Writers.Where(x => x.WriterMail == p).Select(y => y.WriterID).FirstOrDefault();
-             
+
             var headinvalues = hm.GetListByWriter(writeridinfo);
             return View(headinvalues);
         }
         [HttpGet]
         public ActionResult NewHeading()
         {
-            
+
             List<SelectListItem> valuecategory = (from x in cm.GetList()
                                                   select new SelectListItem
                                                   {
@@ -60,7 +60,7 @@ namespace MvcProjeKampi.Controllers
 
             p.HeadingDate = DateTime.Parse(DateTime.Now.ToShortDateString());
             p.WriterID = writeridinfo;
-            p.HeadinStatus=true;
+            p.HeadinStatus = true;
             hm.HeadingAdd(p);
 
             return RedirectToAction("MyHeading");
@@ -99,6 +99,10 @@ namespace MvcProjeKampi.Controllers
 
             return RedirectToAction("MyHeading");
         }
-
+        public ActionResult AllHeading()
+        {
+            var headings = hm.GetList();
+            return View(headings);
+        }
     }
 }

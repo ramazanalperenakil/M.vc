@@ -1,0 +1,35 @@
+﻿@using EntityLayer.Concrete
+@model List<Content>
+@foreach (var x in Model)
+{
+    <div class="timeline timeline-inverse">
+        <!-- timeline time label -->
+        <div class="time-label">
+            <span class="bg-danger">
+                @x.ContentDate.ToString("dd.MM.yyyy") --  @x.Writer.WriterName @x.Writer.WriterSurname
+            </span>
+        </div>
+        <!-- /.timeline-label -->
+        <!-- timeline item -->
+        <div>
+            <i class="fas fa-envelope bg-primary"></i>
+
+            <div class="timeline-item">
+                <span class="time"><i class="far fa-clock"></i> @x.ContentDate.ToString("hh:ss")</span>
+
+                <h3 class="timeline-header"><a href="#">@x.Heading.HeadingName  </a></h3>
+
+                <div class="timeline-body">
+                    @x.ContentValue
+                </div>
+                @*<div class="timeline-footer">
+                        <a href="#" class="btn btn-primary btn-sm">Read more</a>
+                        <a href="#" class="btn btn-danger btn-sm">Delete</a>
+                    </div>*@
+            </div>
+        </div>
+        <!-- END timeline item -->
+        <!-- timeline item -->
+
+    </div>
+}

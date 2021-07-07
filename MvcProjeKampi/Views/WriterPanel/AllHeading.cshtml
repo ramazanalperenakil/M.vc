@@ -1,12 +1,13 @@
 ﻿@using EntityLayer.Concrete
 @model List<Heading>
 @{
-    ViewBag.Title = "MyHeading";
+    ViewBag.Title = "AllHeading";
     Layout = "~/Views/Shared/_WriterLayout.cshtml";
 }
 
+
 @{ string color = "badge badge-success";}
-<a href="/WriterPanel/NewHeading/" class="btn btn-primary">Yeni Başlık Ekele</a>
+
 <div class="card">
     <div class="card-header">
         <h3 class="card-title">Başlık İşlemleri</h3>
@@ -101,16 +102,16 @@
                                 </i>
                                 Yazılar
                             </a>
-                            <a class="btn btn-info btn-sm" href="/WriterPanel/EditHeading/@x.HeadingID">
+                            <a class="btn btn-info btn-sm" href="/WriterPanelContent/AddContent/@x.HeadingID">
                                 <i class="fas fa-pencil-alt">
                                 </i>
-                                Düzenle
+                                Bu Başlığa Yaz
                             </a>
-                            <a class="btn btn-danger btn-sm" href="/WriterPanel/DeleteHeading/@x.HeadingID">
+                           @* <a class="btn btn-danger btn-sm" href="/WriterPanel/DeleteHeading/@x.HeadingID">
                                 <i class="fas fa-trash">
                                 </i>
                                 Sil
-                            </a>
+                            </a>*@
                         </td>
                     </tr>
                 }

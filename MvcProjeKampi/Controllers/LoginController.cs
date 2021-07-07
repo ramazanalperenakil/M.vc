@@ -18,7 +18,7 @@ namespace MvcProjeKampi.Controllers
     {
         LoginManager lm = new LoginManager();
         AdminManager adm = new AdminManager(new EfAdminDal());
-        
+
         // GET: Login
         [HttpGet]
         public ActionResult Index()
@@ -76,6 +76,13 @@ namespace MvcProjeKampi.Controllers
 
             }
 
+        }
+
+        public ActionResult LogOut()
+        {
+            FormsAuthentication.SignOut();
+            Session.Abandon();
+            return RedirectToAction("Headings", "Default");
         }
     }
 }
